@@ -33,11 +33,67 @@ class MyHomePage extends StatelessWidget {
         children: <Widget>[
           Container(
             decoration: BoxDecoration(
-              image: DecorationImage(image: AssetImage("assets/flowers_back.jpg"), fit: BoxFit.cover,),
+              image: DecorationImage(
+                image: AssetImage("assets/flowers_back.jpg"),
+                fit: BoxFit.cover,
+              ),
             ),
           ),
-          Center(
-            child: Text("background"),
+          Column(
+            children: <Widget>[
+              Column(
+                children: <Widget>[
+                  Container(
+                    child: AppBar(
+                      title: Text('Register to Pet My Cat'),
+                      backgroundColor: const Color(0xFFB4C56C).withOpacity(0.0),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(16),
+                    child: Row(
+                      children: <Widget>[
+                        ClipOval(
+                          child: Container(
+                            color: Colors.black54,
+                            width: 170,
+                            height: 170,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(16),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: <Widget>[
+                        ClipOval(
+                          child: Container(
+                            color: Colors.black54,
+                            width: 170,
+                            height: 170,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                      padding: EdgeInsets.only(left: 16),
+                      child: Row(
+                        children: <Widget>[
+                          ClipOval(
+                            child: Container(
+                              color: Colors.black54,
+                              width: 105,
+                              height: 105,
+                            ),
+                          ),
+                        ],
+                      ))
+                ],
+              )
+            ],
           )
         ],
       ),
