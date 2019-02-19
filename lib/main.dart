@@ -49,47 +49,62 @@ class MyHomePage extends StatelessWidget {
                       backgroundColor: const Color(0xFFB4C56C).withOpacity(0.0),
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.all(16),
-                    child: Row(
-                      children: <Widget>[
-                        ClipOval(
-                          child: Container(
-                            color: Colors.black54,
-                            width: 170,
-                            height: 170,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(16),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: <Widget>[
-                        ClipOval(
-                          child: Container(
-                            color: Colors.black54,
-                            width: 170,
-                            height: 170,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                      padding: EdgeInsets.only(left: 16),
-                      child: Row(
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 16, top: 16),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           ClipOval(
                             child: Container(
                               color: Colors.black54,
-                              width: 105,
-                              height: 105,
+                              width: 170,
+                              height: 170,
                             ),
                           ),
+                          Container(
+                            child: Text('Pet owner'),
+                          ),
                         ],
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: Padding(
+                      padding: EdgeInsets.only(right: 16),
+                      child: Column(
+                        children: <Widget>[
+                          ClipOval(
+                            child: Container(
+                              color: Colors.black54,
+                              width: 170,
+                              height: 170,
+                            ),
+                          ),
+                          Text('Pet sitter')
+                        ],
+                      ),
+                    ),
+                  ),
+                  Padding(
+                      padding: EdgeInsets.only(left: 16),
+                      child: Align(
+                        alignment: Alignment.bottomLeft,
+                        child: Column(
+                          children: <Widget>[
+                            ClipOval(
+                              child: Container(
+                                color: Colors.black54,
+                                width: 105,
+                                height: 105,
+                              ),
+                            ),
+                            Text('Log in')
+                          ],
+                        ),
                       ))
                 ],
               )
