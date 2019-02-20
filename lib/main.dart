@@ -88,6 +88,10 @@ class MyHomePage extends StatelessWidget {
                         color: Colors.black54,
                         width: 170,
                         height: 170,
+                        child: Padding(
+                          padding: const EdgeInsets.all(24.0),
+                          child: SvgPicture.asset('assets/sitter.svg'),
+                        ),
                       ),
                     ),
                     Text(
@@ -111,6 +115,10 @@ class MyHomePage extends StatelessWidget {
                         color: Colors.black54,
                         width: 105,
                         height: 105,
+                        child: Padding(
+                          padding: const EdgeInsets.all(24.0),
+                          child: SvgPicture.asset('assets/key.svg'),
+                        ),
                       ),
                     ),
                     Text(
