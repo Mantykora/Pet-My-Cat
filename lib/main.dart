@@ -29,89 +29,89 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: <Widget>[
-          Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("assets/flowers_back.jpg"),
-                fit: BoxFit.cover,
+        appBar: AppBar(
+          title: Text('Register to Pet My Cat'),
+          backgroundColor: Colors.black54,
+        ),
+        body: Stack(
+          children: <Widget>[
+            Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/flowers_back.jpg"),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
-          ),
-          Column(
-            children: <Widget>[
-              Column(
-                children: <Widget>[
-                  Container(
-                    child: AppBar(
-                      title: Text('Register to Pet My Cat'),
-                      backgroundColor: const Color(0xFFB4C56C).withOpacity(0.0),
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment.topLeft,
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 16, top: 16),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          ClipOval(
-                            child: Container(
-                              color: Colors.black54,
-                              width: 170,
-                              height: 170,
-                            ),
-                          ),
-                          Container(
-                            child: Text('Pet owner'),
-                          ),
-                        ],
+            Positioned(
+              top: 0.0,
+              child: Padding(
+                padding: EdgeInsets.only(left: 16, top: 16),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    ClipOval(
+                      child: Container(
+                        color: Colors.black54,
+                        width: 170,
+                        height: 170,
                       ),
                     ),
-                  ),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: Padding(
-                      padding: EdgeInsets.only(right: 16),
-                      child: Column(
-                        children: <Widget>[
-                          ClipOval(
-                            child: Container(
-                              color: Colors.black54,
-                              width: 170,
-                              height: 170,
-                            ),
-                          ),
-                          Text('Pet sitter')
-                        ],
+                    Container(
+                      child: Text(
+                        'Pet owner',
+                        style: TextStyle(fontSize: 20),
                       ),
                     ),
-                  ),
-                  Padding(
-                      padding: EdgeInsets.only(left: 16),
-                      child: Align(
-                        alignment: Alignment.bottomLeft,
-                        child: Column(
-                          children: <Widget>[
-                            ClipOval(
-                              child: Container(
-                                color: Colors.black54,
-                                width: 105,
-                                height: 105,
-                              ),
-                            ),
-                            Text('Log in')
-                          ],
-                        ),
-                      ))
-                ],
-              )
-            ],
-          )
-        ],
-      ),
-    );
+                  ],
+                ),
+              ),
+            ),
+            Positioned(
+              right: 0.0,
+              top: 200,
+              child: Padding(
+                padding: EdgeInsets.only(right: 16),
+                child: Column(
+                  children: <Widget>[
+                    ClipOval(
+                      child: Container(
+                        color: Colors.black54,
+                        width: 170,
+                        height: 170,
+                      ),
+                    ),
+                    Text(
+                      'Pet sitter',
+                      style: TextStyle(fontSize: 20),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            Positioned(
+              bottom: 0.0,
+              child: Padding(
+                padding: EdgeInsets.all(16),
+                child: Column(
+                  children: <Widget>[
+                    ClipOval(
+                      child: Container(
+                        color: Colors.black54,
+                        width: 105,
+                        height: 105,
+                      ),
+                    ),
+                    Text(
+                      'Log in',
+                      style: TextStyle(fontSize: 20),
+                    )
+                  ],
+                ),
+              ),
+            )
+          ],
+        ));
   }
 }
