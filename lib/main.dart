@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -56,12 +58,18 @@ class MyHomePage extends StatelessWidget {
                         color: Colors.black54,
                         width: 170,
                         height: 170,
+                        child: Padding(
+                          padding: const EdgeInsets.all(24.0),
+                          child: SvgPicture.asset('assets/volunteer.svg'),
+                        ),
                       ),
                     ),
                     Container(
                       child: Text(
                         'Pet owner',
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
                       ),
                     ),
                   ],
@@ -84,7 +92,9 @@ class MyHomePage extends StatelessWidget {
                     ),
                     Text(
                       'Pet sitter',
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
                     )
                   ],
                 ),
@@ -105,7 +115,9 @@ class MyHomePage extends StatelessWidget {
                     ),
                     Text(
                       'Log in',
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
                     )
                   ],
                 ),
