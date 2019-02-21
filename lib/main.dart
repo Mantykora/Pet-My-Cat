@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
+  String userType;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,10 +67,11 @@ class MyHomePage extends StatelessWidget {
                             ),
                           ),
                           onTap: () {
+                            userType = "owner";
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => RegisterRoute()),
+                                  builder: (context) => RegisterRoute(userType)),
                             );
                           },
                         ),
@@ -107,10 +109,12 @@ class MyHomePage extends StatelessWidget {
                             ),
                           ),
                           onTap: () {
+                            userType = "sitter";
+
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => RegisterRoute()),
+                                  builder: (context) => RegisterRoute(userType)),
                             );
                           },
                         ),
@@ -145,10 +149,11 @@ class MyHomePage extends StatelessWidget {
                           ),
                         ),
                         onTap: () {
+
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => RegisterRoute()),
+                                builder: (context) => RegisterRoute('login')),
                           );
                         },
                       ),
