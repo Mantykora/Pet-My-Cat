@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
+import 'package:pet_my_cat/register_route.dart';
 
 void main() => runApp(MyApp());
 
@@ -68,8 +68,7 @@ class MyHomePage extends StatelessWidget {
                       child: Text(
                         'Pet owner',
                         style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
+                            fontSize: 20, fontWeight: FontWeight.bold),
                       ),
                     ),
                   ],
@@ -84,21 +83,32 @@ class MyHomePage extends StatelessWidget {
                 child: Column(
                   children: <Widget>[
                     ClipOval(
-                      child: Container(
-                        color: Colors.black54,
-                        width: 170,
-                        height: 170,
-                        child: Padding(
-                          padding: const EdgeInsets.all(24.0),
-                          child: SvgPicture.asset('assets/sitter.svg'),
+                      child: Material(
+                        child: InkWell(
+                          child: Container(
+                            color: Colors.black54,
+                            width: 170,
+                            height: 170,
+                            child: Padding(
+                              padding: const EdgeInsets.all(24.0),
+                              child: SvgPicture.asset('assets/sitter.svg'),
+                            ),
+                          ),
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => RegisterRoute()),
+                            );
+                          },
                         ),
+                        type: MaterialType.transparency,
                       ),
                     ),
                     Text(
                       'Pet sitter',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     )
                   ],
                 ),
@@ -123,9 +133,8 @@ class MyHomePage extends StatelessWidget {
                     ),
                     Text(
                       'Log in',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     )
                   ],
                 ),
