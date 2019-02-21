@@ -54,14 +54,26 @@ class MyHomePage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     ClipOval(
-                      child: Container(
-                        color: Colors.black54,
-                        width: 170,
-                        height: 170,
-                        child: Padding(
-                          padding: const EdgeInsets.all(24.0),
-                          child: SvgPicture.asset('assets/volunteer.svg'),
+                      child: Material(
+                        child: InkWell(
+                          child: Container(
+                            color: Colors.black54,
+                            width: 170,
+                            height: 170,
+                            child: Padding(
+                              padding: const EdgeInsets.all(24.0),
+                              child: SvgPicture.asset('assets/volunteer.svg'),
+                            ),
+                          ),
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => RegisterRoute()),
+                            );
+                          },
                         ),
+                        type: MaterialType.transparency,
                       ),
                     ),
                     Container(
@@ -121,16 +133,27 @@ class MyHomePage extends StatelessWidget {
                 child: Column(
                   children: <Widget>[
                     ClipOval(
-                      child: Container(
-                        color: Colors.black54,
-                        width: 105,
-                        height: 105,
-                        child: Padding(
-                          padding: const EdgeInsets.all(24.0),
-                          child: SvgPicture.asset('assets/key.svg'),
+                        child: Material(
+                      child: InkWell(
+                        child: Container(
+                          color: Colors.black54,
+                          width: 105,
+                          height: 105,
+                          child: Padding(
+                            padding: const EdgeInsets.all(24.0),
+                            child: SvgPicture.asset('assets/key.svg'),
+                          ),
                         ),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => RegisterRoute()),
+                          );
+                        },
                       ),
-                    ),
+                      type: MaterialType.transparency,
+                    )),
                     Text(
                       'Log in',
                       style:
