@@ -39,13 +39,16 @@ class MyHomePage extends StatelessWidget {
         ),
         body: Stack(
           children: <Widget>[
-            Container(
+            Opacity(
+              opacity: 0.8,
+            child: Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage("assets/flowers_back.jpg"),
+                  image: AssetImage("assets/flowers_back_black.jpg"),
                   fit: BoxFit.cover,
                 ),
               ),
+            ),
             ),
             Positioned(
               top: 0.0,
