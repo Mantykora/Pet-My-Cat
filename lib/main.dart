@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:pet_my_cat/login_route.dart';
 import 'package:pet_my_cat/register_route.dart';
 
 void main() => runApp(MyApp());
@@ -157,7 +158,7 @@ class MyHomePage extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => RegisterRoute('login')),
+                                builder: (context) => LoginRoute()),
                           );
                         },
                       ),
