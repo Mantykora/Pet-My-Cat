@@ -44,24 +44,33 @@ class RegisterRoute extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 32, left: 24, right: 24),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      labelText: 'Name',
-                      fillColor: Colors.white,
+                  padding: const EdgeInsets.only(top: 32),
+                  child: Container(
+                    width: 270,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        labelText: 'Name',
+                        fillColor: Colors.white,
+                      ),
                     ),
                   ),
                 ),
                 Padding(
-                    padding: const EdgeInsets.only(top: 8, left: 24, right: 24),
-                    child: TextField(
-                      decoration: InputDecoration(labelText: 'E-mail'),
+                    padding: const EdgeInsets.only(top: 8),
+                    child: Container(
+                      width: 270,
+                      child: TextField(
+                        decoration: InputDecoration(labelText: 'E-mail'),
+                      ),
                     )),
                 Padding(
                     padding: const EdgeInsets.only(top: 8, left: 24, right: 24),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        labelText: 'Password',
+                    child: Container(
+                      width: 270,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          labelText: 'Password',
+                        ),
                       ),
                     )),
                 Padding(
@@ -73,10 +82,10 @@ class RegisterRoute extends StatelessWidget {
                       child: FlatButton(
                         child: Padding(
                           padding: const EdgeInsets.only(
-                            top: 16,
-                            bottom: 16,
-                            right: 76,
-                            left: 76,
+//                            top: 16,
+//                            bottom: 16,
+//                            right: 76,
+//                            left: 76,
                           ),
                           child: Text(
                             'REGISTER',
@@ -86,7 +95,12 @@ class RegisterRoute extends StatelessWidget {
                         onPressed: () {
                           Navigator.pop(context);
                         },
-                      )),
+
+                      ),
+                    width: 270,
+                      height: 50,
+
+                  ),
                 ),
               ],
             ),
