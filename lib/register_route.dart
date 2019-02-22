@@ -22,9 +22,9 @@ class RegisterRoute extends StatelessWidget {
         height: MediaQuery.of(context).size.height,
         child:
         Opacity(
-          opacity: 0.5,
+          opacity: 1.0,
         child: Image.asset(
-            "assets/blur_background.jpg",
+            "assets/blur_background2.jpg",
           fit: BoxFit.fill,
 
         ),
@@ -39,13 +39,12 @@ class RegisterRoute extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: TextField(
-
                   decoration: InputDecoration(
                       labelText: 'Name',
                       fillColor: Colors.white,
                       border: OutlineInputBorder(
-
                       )
+
                   ),
                 ),
               ),
@@ -73,16 +72,26 @@ class RegisterRoute extends StatelessWidget {
                     ),
                   )
               ),
-              Container(
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: InkWell(
+
+              child:Container(
+                padding: EdgeInsets.all(16.0),
                 decoration: BoxDecoration(
-                  border: Border.all()
+                    border: Border.all(
+                      color: Colors.white
+                    )
                 ),
-                  child: FlatButton(
-                    color: Colors.transparent,
-                    child: Text('Register'),
-                onPressed: showDialog,
+                    child: Text(
+                        'Register',
+                      style: TextStyle(color: Colors.white),
+                    ),
+
               ),
-              )
+                      onTap: showDialog,
+              ),
+                  )
 
             ],
         ),
