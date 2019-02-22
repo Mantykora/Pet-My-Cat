@@ -6,6 +6,14 @@ class RegisterRoute extends StatelessWidget {
 
   RegisterRoute(this.userType);
 
+  String getAssetPath() {
+    if (userType == "owner") {
+      return 'assets/volunteer.svg';
+    } else {
+      return 'assets/sitter.svg';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +45,7 @@ class RegisterRoute extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 16),
                   child: Container(
                     child: SvgPicture.asset(
-                      'assets/user.svg',
+                      getAssetPath(),
                       height: 100,
                       width: 100,
                     ),
@@ -76,30 +84,28 @@ class RegisterRoute extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 56),
                   child: Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.white),
-                      ),
-                      child: FlatButton(
-                        child: Padding(
-                          padding: const EdgeInsets.only(
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.white),
+                    ),
+                    child: FlatButton(
+                      child: Padding(
+                        padding: const EdgeInsets.only(
 //                            top: 16,
 //                            bottom: 16,
 //                            right: 76,
 //                            left: 76,
-                          ),
-                          child: Text(
-                            'REGISTER',
-                            style: TextStyle(color: Colors.white, fontSize: 18),
-                          ),
+                            ),
+                        child: Text(
+                          'REGISTER',
+                          style: TextStyle(color: Colors.white, fontSize: 18),
                         ),
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-
                       ),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                    ),
                     width: 270,
-                      height: 50,
-
+                    height: 50,
                   ),
                 ),
               ],
