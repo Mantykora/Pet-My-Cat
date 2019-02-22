@@ -36,6 +36,9 @@ flutter:
    - volunteer.svg
    - sitter.svg
    - key.svg
+   - blur_background.jpg
+   - blur_bubbles.jpg
+   - blur_background2.jpg
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
