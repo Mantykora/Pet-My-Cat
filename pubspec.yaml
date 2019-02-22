@@ -39,6 +39,7 @@ flutter:
    - blur_background.jpg
    - blur_bubbles.jpg
    - blur_background2.jpg
+   - user.svg
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

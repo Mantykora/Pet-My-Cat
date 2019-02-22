@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class RegisterRoute extends StatelessWidget {
   String userType;
@@ -33,38 +34,53 @@ class RegisterRoute extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: TextField(
-                    decoration: InputDecoration(
-                        labelText: 'Name',
-                        fillColor: Colors.white,
-                        border: OutlineInputBorder()),
+                  padding: const EdgeInsets.only(top: 16),
+                  child: Container(
+                    child: SvgPicture.asset(
+                      'assets/user.svg',
+                      height: 100,
+                      width: 100,
+                    ),
                   ),
                 ),
                 Padding(
-                    padding: const EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.only(top: 32, left: 24, right: 24),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      labelText: 'Name',
+                      fillColor: Colors.white,
+                    ),
+                  ),
+                ),
+                Padding(
+                    padding: const EdgeInsets.only(top: 8, left: 24, right: 24),
                     child: TextField(
-                      decoration: InputDecoration(
-                          labelText: 'E-mail', border: OutlineInputBorder()),
+                      decoration: InputDecoration(labelText: 'E-mail'),
                     )),
                 Padding(
-                    padding: const EdgeInsets.all(16.0),
+                    padding: const EdgeInsets.only(top: 8, left: 24, right: 24),
                     child: TextField(
                       decoration: InputDecoration(
-                          labelText: 'Password', border: OutlineInputBorder()),
+                        labelText: 'Password',
+                      ),
                     )),
                 Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.only(top: 56),
                   child: Container(
                       decoration: BoxDecoration(
                         border: Border.all(color: Colors.white),
                       ),
                       child: FlatButton(
                         child: Padding(
-                          padding: const EdgeInsets.all(16.0),
+                          padding: const EdgeInsets.only(
+                            top: 16,
+                            bottom: 16,
+                            right: 76,
+                            left: 76,
+                          ),
                           child: Text(
-                            'Register',
-                            style: TextStyle(color: Colors.white),
+                            'REGISTER',
+                            style: TextStyle(color: Colors.white, fontSize: 18),
                           ),
                         ),
                         onPressed: () {
