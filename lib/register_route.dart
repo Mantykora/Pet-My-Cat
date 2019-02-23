@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:pet_my_cat/creator_route.dart';
 
 class RegisterRoute extends StatelessWidget {
   String userType;
@@ -101,7 +102,12 @@ class RegisterRoute extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
-                        Navigator.pop(context);
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CreatorRoute(),
+                        ),
+                        );
                       },
                     ),
                     width: 270,
