@@ -24,6 +24,7 @@ class RegisterRoute extends StatelessWidget {
         backgroundColor: Colors.black54,
       ),
       body: Stack(
+        fit: StackFit.expand,
         children: <Widget>[
           Positioned(
             top: 0.0,
@@ -34,12 +35,12 @@ class RegisterRoute extends StatelessWidget {
               opacity: 1.0,
               child: Image.asset(
                 "assets/blur_background2.jpg",
-                fit: BoxFit.fill,
+                fit: BoxFit.cover,
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(24.0),
+            padding: const EdgeInsets.all(8.0),
             child: Column(
               children: <Widget>[
                 Padding(
