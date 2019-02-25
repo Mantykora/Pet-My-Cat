@@ -22,7 +22,9 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
         primarySwatch: Colors.blue,
-        hintColor: Colors.white
+        hintColor: Colors.black,
+          primaryColor: const Color(0xff9c27b0),
+        accentColor: const Color(0xff00bbd3)
       ),
       home: MyHomePage(),
     );
@@ -34,23 +36,13 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xffdadada),
         appBar: AppBar(
           title: Text('Register to Pet My Cat'),
-          backgroundColor: Colors.black54,
         ),
         body: Stack(
           children: <Widget>[
-            Opacity(
-              opacity: 0.8,
-            child: Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("assets/flowers_back_black.jpg"),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-            ),
+
             Positioned(
               top: 0.0,
               child: Padding(
@@ -63,7 +55,7 @@ class MyHomePage extends StatelessWidget {
                       child: Material(
                         child: InkWell(
                           child: Container(
-                            color: Colors.black54,
+                            color: Colors.white,
                             width: 170,
                             height: 170,
                             child: Padding(
@@ -105,7 +97,7 @@ class MyHomePage extends StatelessWidget {
                       child: Material(
                         child: InkWell(
                           child: Container(
-                            color: Colors.black54,
+                            color: Colors.white,
                             width: 170,
                             height: 170,
                             child: Padding(
@@ -145,7 +137,7 @@ class MyHomePage extends StatelessWidget {
                         child: Material(
                       child: InkWell(
                         child: Container(
-                          color: Colors.black54,
+                          color: Colors.white,
                           width: 105,
                           height: 105,
                           child: Padding(

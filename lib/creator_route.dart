@@ -6,28 +6,14 @@ class CreatorRoute extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
+      backgroundColor: const Color(0xffdadada),
       resizeToAvoidBottomPadding: false,
-      backgroundColor: Colors.grey,
       appBar: AppBar(
         title: Text('Create a pet'),
-        backgroundColor: Colors.black54,
       ),
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
-          Positioned(
-            top: 0.0,
-            right: 0.0,
-            left: 0.0,
-            height: MediaQuery.of(context).size.height,
-            child: Opacity(
-              opacity: 0.7,
-              child: Image.asset(
-                "assets/blur_background2.jpg",
-                fit: BoxFit.fill,
-              ),
-            ),
-          ),
           Column(
             children: <Widget>[
 
@@ -74,9 +60,7 @@ class CreatorRoute extends StatelessWidget {
                     width: 270,
                     child: Text(
                         'We will send invitation to your siter \nto install Pet a cat',
-                      style: TextStyle(
-                        color: Colors.white
-                      ),
+
 
                     )),
               ),
@@ -86,6 +70,7 @@ class CreatorRoute extends StatelessWidget {
                   width: 270,
                   height: 50,
                   child: RaisedButton(
+                      color: const Color(0xff00bcd4),
                       onPressed: () {
                         Navigator.push(
                           context,
@@ -96,7 +81,7 @@ class CreatorRoute extends StatelessWidget {
                       }, child: Text(
                     'CREATE',
                     style: TextStyle(
-                      color: const Color(0xffb311B92),
+                      color: Colors.white,
 
                     ),
                   )),

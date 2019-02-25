@@ -18,27 +18,15 @@ class RegisterRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xffdadada),
       resizeToAvoidBottomPadding: false,
       appBar: AppBar(
         title: Text('Register as a pet $userType'),
-        backgroundColor: Colors.black54,
       ),
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
-          Positioned(
-            top: 0.0,
-            right: 0.0,
-            left: 0.0,
-            height: MediaQuery.of(context).size.height,
-            child: Opacity(
-              opacity: 1.0,
-              child: Image.asset(
-                "assets/blur_background2.jpg",
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
+
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
@@ -89,7 +77,8 @@ class RegisterRoute extends StatelessWidget {
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.white),
                     ),
-                    child: FlatButton(
+                    child: RaisedButton(
+                      color: const Color(0xff00bcd4),
                       child: Padding(
                         padding: const EdgeInsets.only(
 //                            top: 16,
