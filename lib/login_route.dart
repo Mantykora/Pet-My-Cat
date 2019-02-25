@@ -33,15 +33,18 @@ class LoginRoute extends StatelessWidget {
                     child: Container(
                       width: 270,
                       child: TextField(
-                        decoration: InputDecoration(labelText: 'E-mail'),
+                        decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'E-mail'),
                       ),
                     )),
                 Padding(
-                    padding: const EdgeInsets.only(top: 8, left: 24, right: 24),
+                    padding: const EdgeInsets.only(top: 16, left: 24, right: 24),
                     child: Container(
                       width: 270,
                       child: TextField(
                         decoration: InputDecoration(
+                          border: OutlineInputBorder(),
                           labelText: 'Password',
                         ),
                       ),
