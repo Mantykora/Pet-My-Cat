@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
-
 class CreatorRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      backgroundColor: const Color(0xffdadada),
+      //backgroundColor: const Color(0xffdadada),
       resizeToAvoidBottomPadding: false,
       appBar: AppBar(
         title: Text('Create a pet'),
@@ -16,16 +15,16 @@ class CreatorRoute extends StatelessWidget {
         children: <Widget>[
           Column(
             children: <Widget>[
-
               Padding(
                 padding: const EdgeInsets.only(top: 36),
                 child: Container(
                   width: 270,
                   child: TextField(
                     decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: 'Pet\'s name',
-                    ),
+                        border: OutlineInputBorder(),
+                        labelText: 'Pet\'s name',
+                        fillColor: Colors.white,
+                        filled: true),
                   ),
                 ),
               ),
@@ -35,22 +34,23 @@ class CreatorRoute extends StatelessWidget {
                   width: 270,
                   child: TextField(
                     decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: 'Pet\'s species',
-                    ),
+                        border: OutlineInputBorder(),
+                        labelText: 'Pet\'s species',
+                        fillColor: Colors.white,
+                        filled: true),
                   ),
                 ),
               ),
-
               Padding(
                 padding: const EdgeInsets.only(top: 16),
                 child: Container(
                   width: 270,
                   child: TextField(
                     decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: 'Your sitter\'s e-mail',
-                    ),
+                        border: OutlineInputBorder(),
+                        labelText: 'Your sitter\'s e-mail',
+                        fillColor: Colors.white,
+                        filled: true),
                   ),
                 ),
               ),
@@ -59,9 +59,7 @@ class CreatorRoute extends StatelessWidget {
                 child: Container(
                     width: 270,
                     child: Text(
-                        'We will send invitation to your siter \nto install Pet a cat',
-
-
+                      'We will send invitation to your siter \nto install Pet a cat',
                     )),
               ),
               Padding(
@@ -78,22 +76,17 @@ class CreatorRoute extends StatelessWidget {
                             builder: (context) => CreatorRoute(),
                           ),
                         );
-                      }, child: Text(
-                    'CREATE',
-                    style: TextStyle(
-                      color: Colors.white,
-
-                    ),
-                  )),
+                      },
+                      child: Text(
+                        'CREATE',
+                        style: TextStyle(color: Colors.white, fontSize: 18),
+                      )),
                 ),
               )
             ],
           )
         ],
-
       ),
     );
   }
-
-
 }

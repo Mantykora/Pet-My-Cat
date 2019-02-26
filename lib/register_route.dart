@@ -18,7 +18,7 @@ class RegisterRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffdadada),
+     // backgroundColor: const Color(0xffdadada),
       resizeToAvoidBottomPadding: false,
       appBar: AppBar(
         title: Text('Register as a pet $userType'),
@@ -50,6 +50,8 @@ class RegisterRoute extends StatelessWidget {
                         border: OutlineInputBorder(),
                         labelText: 'Name',
                         fillColor: Colors.white,
+                        //const Color(0xfff7c4ff),
+                        filled: true
                       ),
                     ),
                   ),
@@ -61,7 +63,9 @@ class RegisterRoute extends StatelessWidget {
                       child: TextField(
                         decoration: InputDecoration(
                             border: OutlineInputBorder(),
-                            labelText: 'E-mail'
+                            labelText: 'E-mail',
+                            fillColor: Colors.white,
+                            filled: true
                         ),
 
                       ),
@@ -74,6 +78,8 @@ class RegisterRoute extends StatelessWidget {
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
                           labelText: 'Password',
+                            fillColor: Colors.white,
+                            filled: true
                         ),
                       ),
                     )),

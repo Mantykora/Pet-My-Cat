@@ -12,20 +12,19 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-        hintColor: Colors.black,
+          // This is the theme of your application.
+          //
+          // Try running your application with "flutter run". You'll see the
+          // application has a blue toolbar. Then, without quitting the app, try
+          // changing the primarySwatch below to Colors.green and then invoke
+          // "hot reload" (press "r" in the console where you ran "flutter run",
+          // or simply save your changes to "hot reload" in a Flutter IDE).
+          // Notice that the counter didn't reset back to zero; the application
+          // is not restarted.
+          primarySwatch: Colors.blue,
+          hintColor: Colors.black,
           primaryColor: const Color(0xff9c27b0),
-        accentColor: const Color(0xff00bbd3)
-      ),
+          accentColor: const Color(0xff00bbd3)),
       home: MyHomePage(),
     );
   }
@@ -33,16 +32,16 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatelessWidget {
   String userType;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffdadada),
+        backgroundColor: const Color(0xffdadada),
         appBar: AppBar(
           title: Text('Register to Pet My Cat'),
         ),
         body: Stack(
           children: <Widget>[
-
             Positioned(
               top: 0.0,
               child: Padding(
@@ -68,7 +67,8 @@ class MyHomePage extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => RegisterRoute(userType)),
+                                  builder: (context) =>
+                                      RegisterRoute(userType)),
                             );
                           },
                         ),
@@ -111,7 +111,8 @@ class MyHomePage extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => RegisterRoute(userType)),
+                                  builder: (context) =>
+                                      RegisterRoute(userType)),
                             );
                           },
                         ),
@@ -146,7 +147,6 @@ class MyHomePage extends StatelessWidget {
                           ),
                         ),
                         onTap: () {
-
                           Navigator.push(
                             context,
                             MaterialPageRoute(
