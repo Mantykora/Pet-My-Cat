@@ -41,6 +41,10 @@ flutter:
    - blur_background2.jpg
    - user.svg
    - flowers_back_black.jpg
+   - cat_photo.jpg
+   - litter-box.svg
+   - tennis-ball.svg
+   - canned-food.svg
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
