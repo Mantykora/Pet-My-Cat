@@ -35,19 +35,63 @@ class PetDetailsRoute extends StatelessWidget {
           children: <Widget>[
             Row(
               children: <Widget>[
+//                Expanded(
                 SvgPicture.asset('assets/canned-food.svg',
-                    width: 50, height: 50)
+                    width: 50, height: 50),
+//                ),
+//                Expanded(
+                Container(
+                  width: 250,
+                  height: 50,
+                  child: TextField(
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'E-mail',
+                        fillColor: Colors.white,
+                        filled: true),
+//                  )
+//                ),
+                  ),
+                )
               ],
             ),
             Row(
               children: <Widget>[
-                SvgPicture.asset('assets/litter-box.svg', width: 50, height: 50)
+                SvgPicture.asset('assets/litter-box.svg',
+                    width: 50, height: 50),
+                Container(
+                  width: 250,
+                  height: 50,
+                  child: TextField(
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'E-mail',
+                        fillColor: Colors.white,
+                        filled: true),
+//                  )
+//                ),
+                  ),
+                )
               ],
             ),
             Row(
               children: <Widget>[
                 SvgPicture.asset('assets/tennis-ball.svg',
-                    width: 50, height: 50)
+                    width: 50, height: 50),
+                Container(
+                  width: 250,
+                  height: 50,
+                  child: TextField(
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'E-mail',
+                        fillColor: Colors.white,
+                        filled: true),
+//                  )
+//                ),
+                  ),
+                )
+                //TextField()
               ],
             )
           ],
