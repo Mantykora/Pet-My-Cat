@@ -32,67 +32,100 @@ class PetDetailsRoute extends StatelessWidget {
           ];
         },
         body: Column(
+
           children: <Widget>[
-            Row(
-              children: <Widget>[
-//                Expanded(
-                SvgPicture.asset('assets/canned-food.svg',
-                    width: 50, height: 50),
-//                ),
-//                Expanded(
-                Container(
-                  width: 250,
-                  height: 50,
-                  child: TextField(
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'E-mail',
-                        fillColor: Colors.white,
-                        filled: true),
+
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                //  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                       Padding(
+                         padding: const EdgeInsets.all(8.0),
+                         child: SvgPicture.asset('assets/canned-food.svg',
+                            width: 50, height: 50),
+                       ),
+                    Container(
+                      width: 250,
+                      height: 70,
+                      child:
+                      Center(
+                        child: TextField(
+                        maxLines: null,
+                          decoration: InputDecoration(
+                              border: OutlineInputBorder(),
+                              labelText: 'Add food instructions',
+                              fillColor: Colors.white,
+                              filled: true),
 //                  )
 //                ),
+                        )
+                      )
+                      ,
+                    )
+                  ],
+                ),
+              ),
+
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SvgPicture.asset('assets/litter-box.svg',
+                        width: 50, height: 50),
                   ),
-                )
-              ],
+                  Container(
+                    width: 250,
+                    height: 70,
+                    child: Center(
+                      child: TextField(
+                        decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'Add pet care instructions',
+                            fillColor: Colors.white,
+                            filled: true),
+//                  )
+//                ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ),
-            Row(
-              children: <Widget>[
-                SvgPicture.asset('assets/litter-box.svg',
-                    width: 50, height: 50),
-                Container(
-                  width: 250,
-                  height: 50,
-                  child: TextField(
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'E-mail',
-                        fillColor: Colors.white,
-                        filled: true),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SvgPicture.asset('assets/tennis-ball.svg',
+                        width: 50, height: 50),
+                  ),
+                  Container(
+                    width: 250,
+                    height: 70,
+                    child: Center(
+                      child: TextField(
+                        decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'Add entertainment instructions',
+                            fillColor: Colors.white,
+                            filled: true),
 //                  )
 //                ),
-                  ),
-                )
-              ],
-            ),
-            Row(
-              children: <Widget>[
-                SvgPicture.asset('assets/tennis-ball.svg',
-                    width: 50, height: 50),
-                Container(
-                  width: 250,
-                  height: 50,
-                  child: TextField(
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'E-mail',
-                        fillColor: Colors.white,
-                        filled: true),
-//                  )
-//                ),
-                  ),
-                )
-                //TextField()
-              ],
+                      ),
+                    ),
+                  )
+                  //TextField()
+                ],
+              ),
             )
           ],
         ),
