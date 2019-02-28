@@ -126,7 +126,21 @@ class PetDetailsRoute extends StatelessWidget {
                   //TextField()
                 ],
               ),
-            )
+            ),
+      Container(
+        width: 300,
+        height: 70,
+            child: TextField(
+              maxLines: 4,
+              decoration: InputDecoration(
+
+                  border: OutlineInputBorder(),
+                  labelText: 'Additional notes to your sitter',
+                  fillColor: Colors.white,
+                  filled: true,
+                 ),
+            ),
+      ),
           ],
         ),
       ),
