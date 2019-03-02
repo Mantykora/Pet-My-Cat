@@ -13,8 +13,8 @@ class PetDetailsRoute extends StatefulWidget {
 }
 
 class _PetEditState extends State<PetDetailsRoute> {
-  String first;
-  String last;
+  String first = 'Choose dates of your trip';
+  String last = '';
 
   Future<Null> _selectDates(BuildContext context) async {
     final List<DateTime> picked = await DateRagePicker.showDatePicker(
@@ -27,8 +27,8 @@ class _PetEditState extends State<PetDetailsRoute> {
     if (picked != null && picked.length == 2) {
 //      var formatter = new DateFormat.dMMM();
       setState(() {
-        first = formatDate(picked[0], [dd, '-', mm]);
-        last = formatDate(picked[1], [dd, '-', mm]);
+        first = formatDate(picked[0], [d, '.', mm]);
+        last = formatDate(picked[1], [d, '.', mm]);
 //        formatDate(picked[0], [d, mm]);
 //        formatDate(picked[1], [d, mm]);
       });
@@ -218,7 +218,7 @@ class _PetEditState extends State<PetDetailsRoute> {
                         ),
                         child: Center(
                           child: Text(
-                            'Choose dates of your trip',
+                        '${first} - ${last}',
 
                           ),
                         ),
@@ -228,13 +228,13 @@ class _PetEditState extends State<PetDetailsRoute> {
               ),
             ),
 
-            Row(
-              children: <Widget>[
-                Text('${first}'),
-                Text('${last}')
-                    
-              ],
-            )
+//            Row(
+//              children: <Widget>[
+//                Text('${first}'),
+//                Text('${last}')
+//
+//              ],
+//            )
 
 
           ],
