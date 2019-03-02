@@ -45,6 +45,7 @@ flutter:
    - litter-box.svg
    - tennis-ball.svg
    - canned-food.svg
+   - calendar.svg
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
