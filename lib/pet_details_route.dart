@@ -13,8 +13,8 @@ class PetDetailsRoute extends StatefulWidget {
 }
 
 class _PetEditState extends State<PetDetailsRoute> {
-  String first = 'Choose dates of your trip';
-  String last = '';
+  String first;
+  String last;
 
   Future<Null> _selectDates(BuildContext context) async {
     final List<DateTime> picked = await DateRagePicker.showDatePicker(
@@ -195,7 +195,7 @@ class _PetEditState extends State<PetDetailsRoute> {
 
 
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(left: 8.0),
               child: Row(
                 children: <Widget>[
                   Padding(
@@ -218,8 +218,7 @@ class _PetEditState extends State<PetDetailsRoute> {
                         ),
                         child: Center(
                           child: Text(
-                        '${first} - ${last}',
-
+                            first == null ? 'Choose dates of your trip' : '${first} - ${last}',
                           ),
                         ),
                       ))
@@ -227,14 +226,27 @@ class _PetEditState extends State<PetDetailsRoute> {
                 ],
               ),
             ),
-
-//            Row(
-//              children: <Widget>[
-//                Text('${first}'),
-//                Text('${last}')
-//
-//              ],
-//            )
+            Padding(
+              padding: const EdgeInsets.only(top: 16),
+              child: Container(
+                width: 270,
+                height: 50,
+                child: RaisedButton(
+                    color: const Color(0xff00bcd4),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => PetDetailsRoute(),
+                        ),
+                      );
+                    },
+                    child: Text(
+                      'CREATE',
+                      style: TextStyle(color: Colors.white, fontSize: 18),
+                    )),
+              ),
+            )
 
 
           ],
