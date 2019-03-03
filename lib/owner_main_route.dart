@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:pet_my_cat/pet_details_route.dart';
+import 'package:pet_my_cat/creator_route.dart';
+import 'package:pet_my_cat/pet_edit_route.dart';
 
 class OwnerMainRoute extends StatelessWidget {
   @override
@@ -38,7 +39,7 @@ class OwnerMainRoute extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                           builder: (context) =>
-                              PetDetailsRoute()),
+                              CreatorRoute()),
                     );
 
                   },

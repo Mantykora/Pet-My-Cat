@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:pet_my_cat/pet_details_route.dart';
+import 'package:pet_my_cat/pet_edit_route.dart';
 
 class CreatorRoute extends StatelessWidget {
   @override
@@ -77,7 +77,7 @@ class CreatorRoute extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => PetDetailsRoute(),
+                            builder: (context) => PetEditRoute(),
                           ),
                         );
                       },

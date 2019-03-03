@@ -4,8 +4,8 @@ import 'package:date_range_picker/date_range_picker.dart' as DateRagePicker;
 import 'package:date_format/date_format.dart';
 import 'package:pet_my_cat/owner_main_route.dart';
 
-class PetDetailsRoute extends StatefulWidget {
-  PetDetailsRoute({Key key}) :super(key: key);
+class PetEditRoute extends StatefulWidget {
+  PetEditRoute({Key key}) :super(key: key);
 
 
 
@@ -13,7 +13,7 @@ class PetDetailsRoute extends StatefulWidget {
   State<StatefulWidget> createState() => _PetEditState();
 }
 
-class _PetEditState extends State<PetDetailsRoute> {
+class _PetEditState extends State<PetEditRoute> {
   String first;
   String last;
 
