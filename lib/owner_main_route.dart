@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pet_my_cat/creator_route.dart';
+import 'package:pet_my_cat/pet_detail_route.dart';
 import 'package:pet_my_cat/pet_edit_route.dart';
 
 class OwnerMainRoute extends StatelessWidget {
@@ -22,6 +23,15 @@ class OwnerMainRoute extends StatelessWidget {
                   width: 50, height: 50,),
                 title: Text('Lucy'),
                 subtitle: Text('Your sitter: Anne'),
+                onTap: () {
+              Navigator.push(
+              context,
+              MaterialPageRoute(
+              builder: (context) =>
+              PetDetailRoute()),
+              );
+
+              },
               )
             ],
 
