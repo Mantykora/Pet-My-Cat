@@ -89,19 +89,19 @@ class _PetEditState extends State<PetDetailRoute> {
                     child: SvgPicture.asset('assets/canned-food.svg',
                         width: 50, height: 50),
                   ),
-                  Container(
-                    width: 250,
-                    height: 70,
-                    child:
+
                     Center(
-                        child: Text(
-                             'Give her a lot of meat!'
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                               'Give her a lot of meat!'
 //                  )
 //                ),
+                          ),
                         )
                     )
                     ,
-                  )
+
                 ],
               ),
             ),
@@ -117,17 +117,18 @@ class _PetEditState extends State<PetDetailRoute> {
                     child: SvgPicture.asset('assets/litter-box.svg',
                         width: 50, height: 50),
                   ),
-                  Container(
-                    width: 250,
-                    height: 70,
-                    child: Center(
-                      child: Text(
-                       'You have to clean up litter box'
+
+                    Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                         'You have to clean up litter box'
 //                  )
 //                ),
+                        ),
                       ),
                     ),
-                  )
+
                 ],
               ),
             ),
@@ -142,17 +143,18 @@ class _PetEditState extends State<PetDetailRoute> {
                     child: SvgPicture.asset('assets/tennis-ball.svg',
                         width: 50, height: 50),
                   ),
-                  Container(
-                    width: 250,
-                    height: 70,
-                    child: Center(
-                      child: Text(
+
+                   Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
                   'Don\'t forget to play with her'
 //                  )
 //                ),
+                        ),
                       ),
                     ),
-                  )
+
                   //TextField()
                 ],
               ),
@@ -165,8 +167,11 @@ class _PetEditState extends State<PetDetailRoute> {
                 child: Row(
                   children: <Widget>[
                     Expanded(
-                      child: Text(
-                       'Change her water'
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                         'Change her water'
+                        ),
                       ),
 
                     ),
@@ -188,16 +193,15 @@ class _PetEditState extends State<PetDetailRoute> {
                         height: 50,),
                     ),
                   ),
-                       Container(
-                        width: 250,
-                        height: 50,
-
-                        child: Center(
-                          child: Text(
-                            '3.03 - 10.03'
+                     Padding(
+                       padding: const EdgeInsets.all(8.0),
+                       child: Center(
+                            child: Text(
+                              '3.03 - 10.03'
+                            ),
                           ),
-                        ),
-                      )
+                     ),
+
 
                 ],
               ),
