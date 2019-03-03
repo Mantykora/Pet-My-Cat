@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:pet_my_cat/creator_route.dart';
+import 'package:pet_my_cat/login_route.dart';
 
 class RegisterRoute extends StatelessWidget {
   String userType;
@@ -105,7 +106,8 @@ class RegisterRoute extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => CreatorRoute(),
+                              builder: (context) =>
+                                  userType == "owner" ? CreatorRoute() : LoginRoute()
                         ),
                         );
                       },

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:date_range_picker/date_range_picker.dart' as DateRagePicker;
 import 'package:date_format/date_format.dart';
+import 'package:pet_my_cat/owner_main_route.dart';
 
 class PetDetailsRoute extends StatefulWidget {
   PetDetailsRoute({Key key}) :super(key: key);
@@ -237,7 +238,7 @@ class _PetEditState extends State<PetDetailsRoute> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => PetDetailsRoute(),
+                          builder: (context) => OwnerMainRoute(),
                         ),
                       );
                     },
