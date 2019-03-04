@@ -16,6 +16,8 @@ class PetEditRoute extends StatefulWidget {
 class _PetEditState extends State<PetEditRoute> {
   String first;
   String last;
+  String dropdownValue = '3 times a day';
+
 
   Future<Null> _selectDates(BuildContext context) async {
     final List<DateTime> picked = await DateRagePicker.showDatePicker(
@@ -229,20 +231,30 @@ class _PetEditState extends State<PetEditRoute> {
             ),
 
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(left:16.0),
               child: Row(
                 children: <Widget>[
-                  Text('Choose visit interval'),
-                  DropdownButton(items:
-                      <String>['One', 'Two']
-                      .map<DropdownMenuItem<String>>((String value) {
-                        return DropdownMenuItem<String> (
+                  Text('Choose visit interval:'),
+                  Padding(
+                    padding: const EdgeInsets.only(left:8.0),
+                    child: DropdownButton<String>(
+                      value: dropdownValue,
+                      onChanged: (String newValue) {
+                        setState(() {
+                          dropdownValue = newValue;
+                        });
+                      },
+                      items: <String>['3 times a day', '2 times a day', 'everyday', 'every two days', 'every three days', 'every four days', 'every five days', 'once a week',
+                      'once in two weeks']
+                          .map<DropdownMenuItem<String>>((String value) {
+                        return DropdownMenuItem<String>(
                           value: value,
                           child: Text(value),
                         );
                       })
-                      .toList()
-                      , onChanged: null)
+                          .toList(),
+                    ),
+                  ),
                 ],
               ),
             ),
