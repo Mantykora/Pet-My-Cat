@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:date_range_picker/date_range_picker.dart' as DateRagePicker;
 import 'package:date_format/date_format.dart';
+import 'package:pet_my_cat/custom_day_tile_builder.dart';
 import 'package:pet_my_cat/owner_main_route.dart';
 import 'package:pet_my_cat/pet_edit_route.dart';
 import 'package:flutter_calendar/flutter_calendar.dart';
+import 'package:calendarro/calendarro.dart';
+
 
 
 class PetDetailRoute extends StatefulWidget {
@@ -209,8 +212,16 @@ class _PetEditState extends State<PetDetailRoute> {
               ),
             ),
 
-            Calendar(
-              showCalendarPickerIcon: false,
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: IgnorePointer(
+                child: Calendarro(
+                    startDate: DateTime.now(),
+                    selectionMode: SelectionMode.MULTI,
+                    selectedDates: [DateTime(2019, 3, 6), DateTime(2019, 3, 9)]
+
+                ),              ),
+
             ),
 
             Padding(
