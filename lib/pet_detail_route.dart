@@ -4,6 +4,8 @@ import 'package:date_range_picker/date_range_picker.dart' as DateRagePicker;
 import 'package:date_format/date_format.dart';
 import 'package:pet_my_cat/owner_main_route.dart';
 import 'package:pet_my_cat/pet_edit_route.dart';
+import 'package:flutter_calendar/flutter_calendar.dart';
+
 
 class PetDetailRoute extends StatefulWidget {
   PetDetailRoute({Key key}) :super(key: key);
@@ -206,6 +208,11 @@ class _PetEditState extends State<PetDetailRoute> {
                 ],
               ),
             ),
+
+            Calendar(
+              showCalendarPickerIcon: false,
+            ),
+
             Padding(
               padding: const EdgeInsets.only(top: 16),
               child: Container(

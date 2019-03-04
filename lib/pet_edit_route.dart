@@ -227,6 +227,26 @@ class _PetEditState extends State<PetEditRoute> {
                 ],
               ),
             ),
+
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: <Widget>[
+                  Text('Choose visit interval'),
+                  DropdownButton(items:
+                      <String>['One', 'Two']
+                      .map<DropdownMenuItem<String>>((String value) {
+                        return DropdownMenuItem<String> (
+                          value: value,
+                          child: Text(value),
+                        );
+                      })
+                      .toList()
+                      , onChanged: null)
+                ],
+              ),
+            ),
+
             Padding(
               padding: const EdgeInsets.only(top: 16),
               child: Container(
