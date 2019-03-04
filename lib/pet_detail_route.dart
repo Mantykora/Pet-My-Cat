@@ -216,6 +216,7 @@ class _PetEditState extends State<PetDetailRoute> {
               padding: const EdgeInsets.all(16.0),
               child: IgnorePointer(
                 child: Calendarro(
+                    dayTileBuilder: PetDayTileBuilder(),
                     startDate: DateTime.now(),
                     selectionMode: SelectionMode.MULTI,
                     selectedDates: [DateTime(2019, 3, 6), DateTime(2019, 3, 9)]
