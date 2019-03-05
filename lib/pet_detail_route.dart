@@ -224,18 +224,38 @@ class _PetEditState extends State<PetDetailRoute> {
               ),
             ),
 
-            Padding(
+            Visibility(
+              visible: userType == 'owner' ? true : false,
+              child:   Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: IgnorePointer(
+                  child: Calendarro(
+                      dayTileBuilder: PetDayTileBuilder(),
+                      startDate: DateTime.now(),
+                      selectionMode: SelectionMode.MULTI,
+                      selectedDates: [DateTime(2019, 3, 8), DateTime(2019, 3, 9)]
+
+                  ),              ),
+
+              ),
+            ),
+
+            Visibility(
+              visible: userType == 'sitter' ? true : false,
+              child:    Padding(
               padding: const EdgeInsets.all(16.0),
-              child: IgnorePointer(
+
                 child: Calendarro(
                     dayTileBuilder: PetDayTileBuilder(),
                     startDate: DateTime.now(),
                     selectionMode: SelectionMode.MULTI,
                     selectedDates: [DateTime(2019, 3, 6), DateTime(2019, 3, 9)]
 
-                ),              ),
+                ),
 
             ),
+            ),
+
 
             Visibility(
                 visible: userType == 'owner' ? true : false,

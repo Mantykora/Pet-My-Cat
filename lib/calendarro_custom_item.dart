@@ -1,6 +1,7 @@
 import 'package:calendarro/calendarro.dart';
 import 'package:calendarro/date_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class PetCalendarroDayItem extends StatelessWidget {
   PetCalendarroDayItem({this.date, this.calendarroState, this.onTap});
@@ -39,6 +40,7 @@ class PetCalendarroDayItem extends StatelessWidget {
           shape: BoxShape.circle);
     } else if (checkedDate) {
       boxDecoration = BoxDecoration(
+        image: DecorationImage(image: AssetImage('assets/cat_photo.jpg')),
           border: Border.all(
             color: Colors.red,
             width: 1.0,
