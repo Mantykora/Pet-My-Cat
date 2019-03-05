@@ -11,17 +11,29 @@ import 'package:calendarro/calendarro.dart';
 
 
 class PetDetailRoute extends StatefulWidget {
-  PetDetailRoute({Key key}) :super(key: key);
+  final String userType;
+
+  PetDetailRoute({Key key, @required this.userType}) :super(key: key);
+
+ // String userType;
+//  PetDetailRoute(this.userType);
+
 
 
 
   @override
-  State<StatefulWidget> createState() => _PetEditState();
+  State<StatefulWidget> createState() => _PetEditState(userType);
 }
 
 class _PetEditState extends State<PetDetailRoute> {
   String first;
   String last;
+
+   String userType;
+
+  _PetEditState(this.userType);
+
+ // get userType => '';
 
   Future<Null> _selectDates(BuildContext context) async {
     final List<DateTime> picked = await DateRagePicker.showDatePicker(
@@ -225,12 +237,17 @@ class _PetEditState extends State<PetDetailRoute> {
 
             ),
 
+            Visibility(
+                visible: userType == 'owner' ? true : false,
+              child:
+
             Padding(
               padding: const EdgeInsets.only(top: 16),
               child: Container(
                 width: 270,
                 height: 50,
                 child: RaisedButton(
+
                     color: const Color(0xff00bcd4),
                     onPressed: () {
                       Navigator.push(
@@ -245,7 +262,11 @@ class _PetEditState extends State<PetDetailRoute> {
                       style: TextStyle(color: Colors.white, fontSize: 18),
                     )),
               ),
+            ),
+
+
             )
+
 
 
           ],

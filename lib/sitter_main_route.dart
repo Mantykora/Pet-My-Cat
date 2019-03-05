@@ -4,7 +4,7 @@ import 'package:pet_my_cat/creator_route.dart';
 import 'package:pet_my_cat/pet_detail_route.dart';
 import 'package:pet_my_cat/pet_edit_route.dart';
 
-class OwnerMainRoute extends StatelessWidget {
+class SitterMainRoute extends StatelessWidget {
   String userType;
   @override
   Widget build(BuildContext context) {
@@ -25,40 +25,20 @@ class OwnerMainRoute extends StatelessWidget {
                 title: Text('Lucy'),
                 subtitle: Text('Your sitter: Anne'),
                 onTap: () {
-                  userType = "owner";
-              Navigator.push(
-              context,
-              MaterialPageRoute(
-              builder: (context) =>
-              PetDetailRoute(userType: userType,)),
-              );
+                  userType = "sitter";
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            PetDetailRoute(userType: userType)),
+                  );
 
-              },
+                },
               )
             ],
 
           ),
-          Positioned(
-            right: 20.0,
-            bottom: 20,
-            child: Container(
-              width: 70,
-              height: 70,
-              child: FloatingActionButton(
-                foregroundColor: Colors.white,
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              CreatorRoute()),
-                    );
 
-                  },
-                child: Icon(Icons.add),
-              ),
-            ),
-          )
 
         ],
       ),
