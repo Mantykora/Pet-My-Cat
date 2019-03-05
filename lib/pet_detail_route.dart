@@ -246,6 +246,7 @@ class _PetEditState extends State<PetDetailRoute> {
               padding: const EdgeInsets.all(16.0),
 
                 child: Calendarro(
+                  displayMode: DisplayMode.MONTHS,
                     dayTileBuilder: PetDayTileBuilder(),
                     startDate: DateTime.now(),
                     selectionMode: SelectionMode.MULTI,

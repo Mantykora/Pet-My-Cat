@@ -40,9 +40,9 @@ class PetCalendarroDayItem extends StatelessWidget {
           shape: BoxShape.circle);
     } else if (checkedDate) {
       boxDecoration = BoxDecoration(
-        image: DecorationImage(image: AssetImage('assets/cat_photo.jpg')),
+       // image: DecorationImage(image: AssetImage('assets/cat_photo.jpg')),
           border: Border.all(
-            color: Colors.red,
+            color: Colors.blue,
             width: 1.0,
           ),
           shape: BoxShape.circle);
