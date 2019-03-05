@@ -31,6 +31,7 @@ class LoginRoute extends StatelessWidget {
                     child: Container(
                       width: 270,
                       child: TextField(
+                        keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
                             border: OutlineInputBorder(),
                             labelText: 'E-mail',
@@ -44,6 +45,7 @@ class LoginRoute extends StatelessWidget {
                     child: Container(
                       width: 270,
                       child: TextField(
+                        obscureText: true,
                         decoration: InputDecoration(
                             border: OutlineInputBorder(),
                             labelText: 'Password',

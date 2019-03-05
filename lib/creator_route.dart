@@ -22,6 +22,7 @@ class CreatorRoute extends StatelessWidget {
                 child: Container(
                   width: 270,
                   child: TextField(
+                    textCapitalization: TextCapitalization.words,
                     decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         labelText: 'Pet\'s name',
@@ -48,6 +49,7 @@ class CreatorRoute extends StatelessWidget {
                 child: Container(
                   width: 270,
                   child: TextField(
+                    keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         labelText: 'Your sitter\'s e-mail',

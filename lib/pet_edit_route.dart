@@ -96,7 +96,6 @@ class _PetEditState extends State<PetEditRoute> {
                     child:
                     Center(
                         child: TextField(
-                          maxLines: null,
                           decoration: InputDecoration(
                               border: OutlineInputBorder(),
                               labelText: 'Add food instructions',
