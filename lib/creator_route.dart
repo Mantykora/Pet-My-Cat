@@ -2,7 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:pet_my_cat/pet_edit_route.dart';
 
-class CreatorRoute extends StatelessWidget {
+class CreatorRoute extends StatefulWidget {
+  CreatorRoute({Key key}) :super(key: key);
+  @override
+  State<StatefulWidget> createState() => _CreatorState();
+}
+class _CreatorState extends State<CreatorRoute> {
+
+  String dropdownValue;
+
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -35,13 +44,34 @@ class CreatorRoute extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 16),
                 child: Container(
                   width: 270,
-                  child: TextField(
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'Pet\'s species',
-                        fillColor: Colors.white,
-                        filled: true),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(3.0),
+                    color: Colors.white,
+                  border: Border.all()
+    ),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 8.0, top: 4.0, bottom: 4.0),
+                    child: DropdownButtonHideUnderline(
+    child: DropdownButton<String>(
+    hint: Text('Pet\'s species'),
+    value: dropdownValue,
+    onChanged: (String newValue) {
+    setState(() {
+    dropdownValue = newValue;
+    });
+    },
+    items: <String>['cat', 'dog', 'guinea pig', 'tiger', 'iguana', 'fox', 'llama', 'other']
+        .map<DropdownMenuItem<String>>((String value) {
+    return DropdownMenuItem<String>(
+    value: value,
+    child: Text(value),
+    );
+    })
+        .toList(),
+    ),
+    ),
                   ),
+
                 ),
               ),
               Padding(
@@ -95,4 +125,6 @@ class CreatorRoute extends StatelessWidget {
       ),
     );
   }
+
+
 }
