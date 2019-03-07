@@ -3,20 +3,34 @@ import 'package:flutter_svg/svg.dart';
 import 'package:date_range_picker/date_range_picker.dart' as DateRagePicker;
 import 'package:date_format/date_format.dart';
 import 'package:pet_my_cat/owner_main_route.dart';
+import 'package:pet_my_cat/species_map.dart';
 
 class PetEditRoute extends StatefulWidget {
-  PetEditRoute({Key key}) :super(key: key);
+  
+  final String petSpecies;
+  
+  PetEditRoute({Key key, @required this.petSpecies}) :super(key: key);
 
 
 
   @override
-  State<StatefulWidget> createState() => _PetEditState();
+  State<StatefulWidget> createState() => _PetEditState(petSpecies);
 }
 
 class _PetEditState extends State<PetEditRoute> {
   String first;
   String last;
   String dropdownValue = '3 times a day';
+  
+  String petSpecies;
+  String petSpeciesPath;
+  
+  _PetEditState(this.petSpecies);
+  
+  String getPetsAsset() {
+    petSpeciesPath = speciesMap[petSpecies];
+    return petSpeciesPath;
+  }
 
 
   Future<Null> _selectDates(BuildContext context) async {
@@ -61,7 +75,7 @@ class _PetEditState extends State<PetEditRoute> {
                       fontSize: 16.0,
                     )),
                 background:
-                (Image.asset('assets/cat_photo.jpg', fit: BoxFit.cover)),
+                (Image.asset(getPetsAsset(), fit: BoxFit.cover)),
 
                 //Image.network(
 //                    "https://images.pexels.com/photos/396547/pexels-photo-396547.jpeg?auto=compress&cs=tinysrgb&h=350",

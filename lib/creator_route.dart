@@ -109,7 +109,7 @@ class _CreatorState extends State<CreatorRoute> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => PetEditRoute(),
+                            builder: (context) => PetEditRoute(petSpecies: dropdownValue),
                           ),
                         );
                       },
