@@ -55,6 +55,15 @@ flutter:
    - cat.svg
    - assets/pets_photos/dog_photo.jpg
    - assets/pets_photos/bird_photo.jpg
+   - assets/pets_photos/fish_photo.jpg
+   - assets/pets_photos/guinea_pig_photo.jpg
+   - assets/pets_photos/hamster_photo.jpg
+   - assets/pets_photos/iguana_photo.jpg
+   - assets/pets_photos/mouse_photo.jpg
+   - assets/pets_photos/rabbit_photo.jpg
+   - assets/pets_photos/snake_photo.jpg
+   - assets/pets_photos/spider_photo.jpg
+   - assets/pets_photos/turtle_photo.jpg
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
