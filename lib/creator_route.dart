@@ -1,15 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:pet_my_cat/pet_edit_route.dart';
+import 'package:pet_my_cat/species_map.dart';
 
 class CreatorRoute extends StatefulWidget {
   CreatorRoute({Key key}) :super(key: key);
   @override
   State<StatefulWidget> createState() => _CreatorState();
+
 }
 class _CreatorState extends State<CreatorRoute> {
 
   String dropdownValue;
+
+  //speciesMap.keys.toString()
+
+  List<String> createPetsListFromMap() {
+    var speciesString = speciesMap.keys.toString();
+//    for (var i = 0; i < speciesString.length; i++) {
+//
+//    }
+ var newString = "";
+ List<String> newList = [];
+ speciesString = speciesString.replaceAll("(", "").replaceAll(")", "");
+   speciesString.split(',')
+       .forEach((element) => newList.add(element));
+
+   return newList;
+
+  //return speciesString.split(',');
+  }
+
+
 
 
   @override
@@ -60,7 +82,14 @@ class _CreatorState extends State<CreatorRoute> {
     dropdownValue = newValue;
     });
     },
-    items: <String>['cat', 'dog', 'guinea pig', 'tiger', 'iguana', 'fox', 'llama', 'other']
+    items: createPetsListFromMap()
+
+
+
+
+
+
+      //createPetsListFromMap()[0]]
         .map<DropdownMenuItem<String>>((String value) {
     return DropdownMenuItem<String>(
     value: value,

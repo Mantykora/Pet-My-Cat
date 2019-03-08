@@ -6,12 +6,9 @@ import 'package:pet_my_cat/owner_main_route.dart';
 import 'package:pet_my_cat/species_map.dart';
 
 class PetEditRoute extends StatefulWidget {
-  
   final String petSpecies;
-  
-  PetEditRoute({Key key, @required this.petSpecies}) :super(key: key);
 
-
+  PetEditRoute({Key key, @required this.petSpecies}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _PetEditState(petSpecies);
@@ -21,17 +18,16 @@ class _PetEditState extends State<PetEditRoute> {
   String first;
   String last;
   String dropdownValue = '3 times a day';
-  
+
   String petSpecies;
   String petSpeciesPath;
-  
+
   _PetEditState(this.petSpecies);
-  
+
   String getPetsAsset() {
-    petSpeciesPath = speciesMap[petSpecies];
+    petSpeciesPath = speciesMap[petSpecies.trim()];
     return petSpeciesPath;
   }
-
 
   Future<Null> _selectDates(BuildContext context) async {
     final List<DateTime> picked = await DateRagePicker.showDatePicker(
@@ -39,8 +35,7 @@ class _PetEditState extends State<PetEditRoute> {
         initialFirstDate: new DateTime.now(),
         initialLastDate: (new DateTime.now()).add(new Duration(days: 7)),
         firstDate: new DateTime(2015),
-        lastDate: new DateTime(2020)
-    );
+        lastDate: new DateTime(2020));
     if (picked != null && picked.length == 2) {
 //      var formatter = new DateFormat.dMMM();
       setState(() {
@@ -49,7 +44,6 @@ class _PetEditState extends State<PetEditRoute> {
 //        formatDate(picked[0], [d, mm]);
 //        formatDate(picked[1], [d, mm]);
       });
-
 
       print(picked[0]);
     }
@@ -74,8 +68,7 @@ class _PetEditState extends State<PetEditRoute> {
                       color: Colors.white,
                       fontSize: 16.0,
                     )),
-                background:
-                (Image.asset(getPetsAsset(), fit: BoxFit.cover)),
+                background: (Image.asset(getPetsAsset(), fit: BoxFit.cover)),
 
                 //Image.network(
 //                    "https://images.pexels.com/photos/396547/pexels-photo-396547.jpeg?auto=compress&cs=tinysrgb&h=350",
@@ -85,14 +78,9 @@ class _PetEditState extends State<PetEditRoute> {
             ),
           ];
         },
-        body:
-        Column(
+        body: Column(
           mainAxisSize: MainAxisSize.min,
-
-
           children: <Widget>[
-
-
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(
@@ -107,29 +95,24 @@ class _PetEditState extends State<PetEditRoute> {
                   Container(
                     width: 250,
                     height: 70,
-                    child:
-                    Center(
+                    child: Center(
                         child: TextField(
-                          decoration: InputDecoration(
-                              border: OutlineInputBorder(),
-                              labelText: 'Add food instructions',
-                              fillColor: Colors.white,
-                              filled: true),
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: 'Add food instructions',
+                          fillColor: Colors.white,
+                          filled: true),
 //                  )
 //                ),
-                        )
-                    )
-                    ,
+                    )),
                   )
                 ],
               ),
             ),
-
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
-
                 children: <Widget>[
                   Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -158,7 +141,6 @@ class _PetEditState extends State<PetEditRoute> {
               padding: const EdgeInsets.all(8.0),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
-
                 children: <Widget>[
                   Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -187,29 +169,24 @@ class _PetEditState extends State<PetEditRoute> {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Container(
-                width:350,
-
+                width: 350,
                 child: Row(
                   children: <Widget>[
                     Expanded(
                       child: TextField(
                         maxLines: 4,
                         decoration: InputDecoration(
-
                           border: OutlineInputBorder(),
                           labelText: 'Additional notes to your sitter',
                           fillColor: Colors.white,
                           filled: true,
                         ),
                       ),
-
                     ),
                   ],
                 ),
               ),
             ),
-
-
             Padding(
               padding: const EdgeInsets.only(left: 8.0),
               child: Row(
@@ -217,39 +194,42 @@ class _PetEditState extends State<PetEditRoute> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
-                      child: SvgPicture.asset('assets/calendar.svg',
+                      child: SvgPicture.asset(
+                        'assets/calendar.svg',
                         width: 50,
-                        height: 50,),
+                        height: 50,
+                      ),
                     ),
                   ),
-                  FlatButton(onPressed:  () => _selectDates(context),
+                  FlatButton(
+                      onPressed: () => _selectDates(context),
                       child: Container(
                         width: 250,
                         height: 50,
                         decoration: BoxDecoration(
                           border: Border.all(),
-                          borderRadius: BorderRadius.all(
-                              Radius.circular(4.0) //                 <--- border radius here
-                          ),
+                          borderRadius: BorderRadius.all(Radius.circular(
+                                  4.0) //                 <--- border radius here
+                              ),
                         ),
                         child: Center(
                           child: Text(
-                            first == null ? 'Choose dates of your trip' : '${first} - ${last}',
+                            first == null
+                                ? 'Choose dates of your trip'
+                                : '${first} - ${last}',
                           ),
                         ),
                       ))
-
                 ],
               ),
             ),
-
             Padding(
-              padding: const EdgeInsets.only(left:16.0),
+              padding: const EdgeInsets.only(left: 16.0),
               child: Row(
                 children: <Widget>[
                   Text('Choose visit interval:'),
                   Padding(
-                    padding: const EdgeInsets.only(left:8.0),
+                    padding: const EdgeInsets.only(left: 8.0),
                     child: DropdownButton<String>(
                       value: dropdownValue,
                       onChanged: (String newValue) {
@@ -257,21 +237,27 @@ class _PetEditState extends State<PetEditRoute> {
                           dropdownValue = newValue;
                         });
                       },
-                      items: <String>['3 times a day', '2 times a day', 'everyday', 'every two days', 'every three days', 'every four days', 'every five days', 'once a week',
-                      'once in two weeks']
-                          .map<DropdownMenuItem<String>>((String value) {
+                      items: <String>[
+                        '3 times a day',
+                        '2 times a day',
+                        'everyday',
+                        'every two days',
+                        'every three days',
+                        'every four days',
+                        'every five days',
+                        'once a week',
+                        'once in two weeks'
+                      ].map<DropdownMenuItem<String>>((String value) {
                         return DropdownMenuItem<String>(
                           value: value,
                           child: Text(value),
                         );
-                      })
-                          .toList(),
+                      }).toList(),
                     ),
                   ),
                 ],
               ),
             ),
-
             Padding(
               padding: const EdgeInsets.only(top: 16),
               child: Container(
@@ -293,16 +279,9 @@ class _PetEditState extends State<PetEditRoute> {
                     )),
               ),
             )
-
-
           ],
-
         ),
-
-
       ),
     );
   }
-
-
 }
