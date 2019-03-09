@@ -59,11 +59,11 @@ flutter:
    - assets/pets_photos/guinea_pig_photo.jpg
    - assets/pets_photos/hamster_photo.jpg
    - assets/pets_photos/iguana_photo.jpg
-   - assets/pets_photos/mouse_photo.jpg
-   - assets/pets_photos/rabbit_photo.jpg
    - assets/pets_photos/snake_photo.jpg
    - assets/pets_photos/spider_photo.jpg
    - assets/pets_photos/turtle_photo.jpg
+   - assets/pets_photos/rabbit_photo.jpg
+   - assets/pets_photos/mouse_photo.jpg
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

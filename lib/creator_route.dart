@@ -4,35 +4,23 @@ import 'package:pet_my_cat/pet_edit_route.dart';
 import 'package:pet_my_cat/species_map.dart';
 
 class CreatorRoute extends StatefulWidget {
-  CreatorRoute({Key key}) :super(key: key);
+  CreatorRoute({Key key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() => _CreatorState();
-
 }
-class _CreatorState extends State<CreatorRoute> {
 
+class _CreatorState extends State<CreatorRoute> {
   String dropdownValue;
 
-  //speciesMap.keys.toString()
-
   List<String> createPetsListFromMap() {
-    var speciesString = speciesMap.keys.toString();
-//    for (var i = 0; i < speciesString.length; i++) {
-//
-//    }
- var newString = "";
- List<String> newList = [];
- speciesString = speciesString.replaceAll("(", "").replaceAll(")", "");
-   speciesString.split(',')
-       .forEach((element) => newList.add(element));
+    List<String> newList = [];
+    for (String key in speciesMap.keys) {
+      newList.add(key);
+    }
 
-   return newList;
-
-  //return speciesString.split(',');
+    return newList;
   }
-
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -67,40 +55,33 @@ class _CreatorState extends State<CreatorRoute> {
                 child: Container(
                   width: 270,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(3.0),
-                    color: Colors.white,
-                  border: Border.all()
-    ),
+                      borderRadius: BorderRadius.circular(3.0),
+                      color: Colors.white,
+                      border: Border.all()),
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 8.0, top: 4.0, bottom: 4.0),
+                    padding:
+                        const EdgeInsets.only(left: 8.0, top: 4.0, bottom: 4.0),
                     child: DropdownButtonHideUnderline(
-    child: DropdownButton<String>(
-    hint: Text('Pet\'s species'),
-    value: dropdownValue,
-    onChanged: (String newValue) {
-    setState(() {
-    dropdownValue = newValue;
-    });
-    },
-    items: createPetsListFromMap()
+                      child: DropdownButton<String>(
+                        hint: Text('Pet\'s species'),
+                        value: dropdownValue,
+                        onChanged: (String newValue) {
+                          setState(() {
+                            dropdownValue = newValue;
+                          });
+                        },
+                        items: createPetsListFromMap()
 
-
-
-
-
-
-      //createPetsListFromMap()[0]]
-        .map<DropdownMenuItem<String>>((String value) {
-    return DropdownMenuItem<String>(
-    value: value,
-    child: Text(value),
-    );
-    })
-        .toList(),
-    ),
-    ),
+                            //createPetsListFromMap()[0]]
+                            .map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList(),
+                      ),
+                    ),
                   ),
-
                 ),
               ),
               Padding(
@@ -110,11 +91,11 @@ class _CreatorState extends State<CreatorRoute> {
                   child: TextField(
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'Your sitter\'s e-mail',
-                        fillColor: Colors.white,
-                        filled: true,
-                     // prefixIcon: SvgPicture.asset('assets/key.svg',width: 10, height: 10,)
+                      border: OutlineInputBorder(),
+                      labelText: 'Your sitter\'s e-mail',
+                      fillColor: Colors.white,
+                      filled: true,
+                      // prefixIcon: SvgPicture.asset('assets/key.svg',width: 10, height: 10,)
                     ),
                   ),
                 ),
@@ -138,7 +119,8 @@ class _CreatorState extends State<CreatorRoute> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => PetEditRoute(petSpecies: dropdownValue),
+                            builder: (context) =>
+                                PetEditRoute(petSpecies: dropdownValue),
                           ),
                         );
                       },
@@ -154,6 +136,4 @@ class _CreatorState extends State<CreatorRoute> {
       ),
     );
   }
-
-
 }
