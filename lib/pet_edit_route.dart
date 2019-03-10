@@ -25,7 +25,7 @@ class _PetEditState extends State<PetEditRoute> {
   _PetEditState(this.petSpecies);
 
   String getPetsAsset() {
-    petSpeciesPath = speciesMap[petSpecies.trim()];
+    petSpeciesPath = speciesMap[petSpecies].image_path;
     return petSpeciesPath;
   }
 
