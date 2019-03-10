@@ -3,15 +3,16 @@ import 'package:flutter_svg/svg.dart';
 import 'package:date_range_picker/date_range_picker.dart' as DateRagePicker;
 import 'package:date_format/date_format.dart';
 import 'package:pet_my_cat/owner_main_route.dart';
+import 'package:pet_my_cat/pet.dart';
 import 'package:pet_my_cat/species_map.dart';
 
 class PetEditRoute extends StatefulWidget {
-  final String petSpecies;
-
-  PetEditRoute({Key key, @required this.petSpecies}) : super(key: key);
+ // final String petSpecies;
+  final Pet pet;
+  PetEditRoute({Key key, @required this.pet}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => _PetEditState(petSpecies);
+  State<StatefulWidget> createState() => _PetEditState(pet);
 }
 
 class _PetEditState extends State<PetEditRoute> {
@@ -21,11 +22,12 @@ class _PetEditState extends State<PetEditRoute> {
 
   String petSpecies;
   String petSpeciesPath;
+  Pet pet;
 
-  _PetEditState(this.petSpecies);
+  _PetEditState(this.pet);
 
   String getPetsAsset() {
-    petSpeciesPath = speciesMap[petSpecies].image_path;
+    petSpeciesPath = pet.image_path;
     return petSpeciesPath;
   }
 

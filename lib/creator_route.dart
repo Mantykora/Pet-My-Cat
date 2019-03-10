@@ -12,17 +12,24 @@ class CreatorRoute extends StatefulWidget {
 }
 
 class _CreatorState extends State<CreatorRoute> {
-  String dropdownValue;
+
+  List<Pet> sp = speciesList;
+
+
+  Pet dropdownValue;
+  Pet pet;
+
 
 
   List<String> createPetsListFromMap() {
     List<String> newList = [];
-    for (String key in speciesMap.keys) {
-      newList.add(key);
-    }
+//    for (String key in speciesMap.keys) {
+//      newList.add(key);
+//    }
 
     return newList;
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -64,21 +71,22 @@ class _CreatorState extends State<CreatorRoute> {
                     padding:
                         const EdgeInsets.only(left: 8.0, top: 4.0, bottom: 4.0),
                     child: DropdownButtonHideUnderline(
-                      child: DropdownButton<String>(
+                      child: DropdownButton<Pet>(
                         hint: Text('Pet\'s species'),
                         value: dropdownValue,
-                        onChanged: (String newValue) {
+                        onChanged: (Pet newValue) {
                           setState(() {
                             dropdownValue = newValue;
                           });
                         },
-                        items: createPetsListFromMap()
+                        items: sp
+                        //createPetsListFromMap()
 
                             //createPetsListFromMap()[0]]
-                            .map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
+                            .map<DropdownMenuItem<Pet>>((Pet value) {
+                          return DropdownMenuItem<Pet>(
                             value: value,
-                            child: Text(value),
+                            child: Text(value.species),
                           );
                         }).toList(),
                       ),
@@ -122,7 +130,7 @@ class _CreatorState extends State<CreatorRoute> {
                           context,
                           MaterialPageRoute(
                             builder: (context) =>
-                                PetEditRoute(petSpecies: dropdownValue),
+                                PetEditRoute(pet: dropdownValue),
                           ),
                         );
                       },
