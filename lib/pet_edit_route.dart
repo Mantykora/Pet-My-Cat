@@ -65,7 +65,7 @@ class _PetEditState extends State<PetEditRoute> {
               pinned: true,
               flexibleSpace: FlexibleSpaceBar(
                 centerTitle: true,
-                title: Text("Lucy",
+                title: Text(pet.pet_name,
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 16.0,
