@@ -7,11 +7,30 @@ import 'package:pet_my_cat/models/token.dart';
 import 'package:pet_my_cat/resources/api_provider.dart';
 import 'package:pet_my_cat/sitter_main_route.dart';
 
-class RegisterRoute extends StatelessWidget {
+class RegisterRoute extends StatefulWidget {
+
+
+  @override
+  State<StatefulWidget> createState() => _PetRegisterState();
+
+  } //  SignUp(String identifier, String password, String email, String firstName, String lastName) {
+//    ApiProvider apiPovider = ApiProvider();
+//    apiPovider.postSignUp(SignUp(identifier, password, email, firstName, lastName)).then((response) {
+//
+//    });
+//  }
+
+class _PetRegisterState extends State<RegisterRoute> {
+
   String userType;
+  String identifier = "";
+  String firstName = "";
+  String lastName = "";
+  String email = "";
+  String password = "";
 
 
-  RegisterRoute(this.userType);
+  //RegisterRoute(this.userType);
 
   String getAssetPath() {
     if (userType == "owner") {
@@ -21,12 +40,6 @@ class RegisterRoute extends StatelessWidget {
     }
   }
 
-//  SignUp(String identifier, String password, String email, String firstName, String lastName) {
-//    ApiProvider apiPovider = ApiProvider();
-//    apiPovider.postSignUp(SignUp(identifier, password, email, firstName, lastName)).then((response) {
-//
-//    });
-//  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,6 +80,9 @@ class RegisterRoute extends StatelessWidget {
                         //const Color(0xfff7c4ff),
                         filled: true
                       ),
+                      onChanged: (text) {
+                        firstName = text;
+                      },
                     ),
                   ),
                 ),
@@ -82,7 +98,9 @@ class RegisterRoute extends StatelessWidget {
                             fillColor: Colors.white,
                             filled: true
                         ),
-
+                        onChanged: (text) {
+                          email = text;
+                        },
                       ),
                     )),
                 Padding(
@@ -97,6 +115,10 @@ class RegisterRoute extends StatelessWidget {
                             fillColor: Colors.white,
                             filled: true
                         ),
+                        onChanged: (text) {
+
+                            password = text;
+                        },
                       ),
                     )),
                 Padding(
@@ -119,7 +141,7 @@ class RegisterRoute extends StatelessWidget {
                       ),
                       onPressed: () {
                         FutureBuilder<Token>(
-                          future: ApiProvider().postSignUp(SignUp(identifier: "b", password: "b", firstName: "b", lastName: "b", email: "b")),
+                          future: ApiProvider().postSignUp(SignUp(identifier: firstName, password: password, firstName: firstName, lastName: "b", email: email)),
                           builder: (context, response) {
 
                           },

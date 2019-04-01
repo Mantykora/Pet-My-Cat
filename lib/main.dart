@@ -68,7 +68,7 @@ class MyHomePage extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                      RegisterRoute(userType)),
+                                      RegisterRoute()),
                             );
                           },
                         ),
@@ -112,7 +112,7 @@ class MyHomePage extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                      RegisterRoute(userType)),
+                                      RegisterRoute()),
                             );
                           },
                         ),
