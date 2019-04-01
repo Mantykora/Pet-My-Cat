@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:pet_my_cat/creator_route.dart';
 import 'package:pet_my_cat/login_route.dart';
+import 'package:pet_my_cat/models/sign_up.dart';
+import 'package:pet_my_cat/models/token.dart';
+import 'package:pet_my_cat/resources/api_provider.dart';
 import 'package:pet_my_cat/sitter_main_route.dart';
 
 class RegisterRoute extends StatelessWidget {
   String userType;
+
 
   RegisterRoute(this.userType);
 
@@ -16,6 +20,13 @@ class RegisterRoute extends StatelessWidget {
       return 'assets/sitter.svg';
     }
   }
+
+//  SignUp(String identifier, String password, String email, String firstName, String lastName) {
+//    ApiProvider apiPovider = ApiProvider();
+//    apiPovider.postSignUp(SignUp(identifier, password, email, firstName, lastName)).then((response) {
+//
+//    });
+//  }
 
   @override
   Widget build(BuildContext context) {
@@ -107,13 +118,20 @@ class RegisterRoute extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  userType == "owner" ? CreatorRoute() : SitterMainRoute()
-                        ),
+                        FutureBuilder<Token>(
+                          future: ApiProvider().postSignUp(SignUp(identifier: "b", password: "b", firstName: "b", lastName: "b", email: "b")),
+                          builder: (context, response) {
+
+                          },
                         );
+
+//                        Navigator.push(
+//                          context,
+//                          MaterialPageRoute(
+//                              builder: (context) =>
+//                                  userType == "owner" ? CreatorRoute() : SitterMainRoute()
+//                        ),
+//                        );
                       },
                     ),
                     width: 270,
