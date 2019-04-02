@@ -14,11 +14,13 @@ class ApiProvider {
  // SignUp signUp;
 
  // Client client = Client();
+  final String _url = "sit-my-pet.herokuapp.com";
 
   Future<Token> postRegister(SignUp signUp) async {
     print("entered");
+    final uri = Uri.http(_url, "/api/auth/signup");
     final response = await
-        http.post("http://sit-my-pet.herokuapp.com/api/auth/signup",
+        http.post(uri,
           headers: {"Content-type": "application/json"},
           body: signUpToJson(signUp));
     print(response.body.toString());
@@ -33,8 +35,9 @@ class ApiProvider {
 
   Future<Token> postLogin(SignIn signIn) async {
     print("entered");
+    final uri = Uri.https(_url, '/api/auth/signin/credentials');
     final response = await
-    http.post("http://sit-my-pet.herokuapp.com/api/auth/signin/credentials",
+    http.post(uri,
         headers: {"Content-type": "application/json"},
         body: signInToJson(signIn));
     print(response.body.toString());
