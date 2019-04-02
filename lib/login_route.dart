@@ -1,7 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:pet_my_cat/models/sign_in.dart';
+import 'package:pet_my_cat/models/token.dart';
+import 'package:pet_my_cat/resources/api_provider.dart';
 
-class LoginRoute extends StatelessWidget {
+class LoginRoute extends StatefulWidget {
+
+  @override
+  State<StatefulWidget> createState() => _PetLoginState();
+}
+
+class _PetLoginState extends State<LoginRoute> {
+
+  String email = "";
+  String password = "";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,6 +50,9 @@ class LoginRoute extends StatelessWidget {
                             labelText: 'E-mail',
                             fillColor: Colors.white,
                             filled: true),
+                        onChanged: (text) {
+                          email = text;
+                        },
                       ),
                     )),
                 Padding(
@@ -51,6 +67,9 @@ class LoginRoute extends StatelessWidget {
                             labelText: 'Password',
                             fillColor: Colors.white,
                             filled: true),
+                        onChanged: (text) {
+                          password = text;
+                        },
                       ),
                     )),
                 Padding(
@@ -74,7 +93,12 @@ class LoginRoute extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
-                        Navigator.pop(context);
+                        FutureBuilder<Token>(
+                          future: ApiProvider().postLogin(SignIn(identifier: email, password: password)),
+                          builder: (context, response) {
+
+                          },
+                        );
                       },
                     ),
                     width: 270,

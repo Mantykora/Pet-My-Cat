@@ -141,7 +141,7 @@ class _PetRegisterState extends State<RegisterRoute> {
                       ),
                       onPressed: () {
                         FutureBuilder<Token>(
-                          future: ApiProvider().postSignUp(SignUp(identifier: firstName, password: password, firstName: firstName, lastName: "b", email: email)),
+                          future: ApiProvider().postRegister(SignUp(identifier: firstName, password: password, firstName: firstName, lastName: "b", email: email)),
                           builder: (context, response) {
 
                           },
