@@ -6,6 +6,8 @@ import 'package:pet_my_cat/models/sign_up.dart';
 import 'package:pet_my_cat/models/token.dart';
 import 'package:pet_my_cat/resources/api_provider.dart';
 import 'package:pet_my_cat/sitter_main_route.dart';
+import 'package:pet_my_cat/utils/shared_pref.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class RegisterRoute extends StatefulWidget {
 
@@ -28,6 +30,7 @@ class _PetRegisterState extends State<RegisterRoute> {
   String lastName = "";
   String email = "";
   String password = "";
+  //String _token = "";
 
 
   //RegisterRoute(this.userType);
@@ -39,6 +42,13 @@ class _PetRegisterState extends State<RegisterRoute> {
       return 'assets/sitter.svg';
     }
   }
+
+//  void writeToSharedPrefs(String token, String login, String password) async {
+//    final prefs = await SharedPreferences.getInstance();
+//    prefs.setString('token', token);
+//    prefs.setString('login', login);
+//    prefs.setString('password', password);
+//  }
 
 
   @override
@@ -143,8 +153,10 @@ class _PetRegisterState extends State<RegisterRoute> {
                         FutureBuilder<Token>(
                           future: ApiProvider().postRegister(SignUp(identifier: firstName, password: password, firstName: firstName, lastName: "b", email: email)),
                           builder: (context, response) {
+                            //TODO change firstname to email
+                             SharedPref().writeToSharedPrefs(response.data.token, firstName, password);
 
-                          },
+                        },
                         );
 
 //                        Navigator.push(

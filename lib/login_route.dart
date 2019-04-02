@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:pet_my_cat/models/sign_in.dart';
 import 'package:pet_my_cat/models/token.dart';
 import 'package:pet_my_cat/resources/api_provider.dart';
+import 'package:pet_my_cat/utils/shared_pref.dart';
 
 class LoginRoute extends StatefulWidget {
 
@@ -96,6 +97,7 @@ class _PetLoginState extends State<LoginRoute> {
                         FutureBuilder<Token>(
                           future: ApiProvider().postLogin(SignIn(identifier: email, password: password)),
                           builder: (context, response) {
+                            SharedPref().writeToSharedPrefs(response.data.token, email, password);
 
                           },
                         );
