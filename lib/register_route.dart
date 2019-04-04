@@ -10,10 +10,13 @@ import 'package:pet_my_cat/utils/shared_pref.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class RegisterRoute extends StatefulWidget {
+  final String userType;
+
+  RegisterRoute({Key key, @required this.userType}) : super(key: key);
 
 
   @override
-  State<StatefulWidget> createState() => _PetRegisterState();
+  State<StatefulWidget> createState() => _PetRegisterState(userType);
 
   } //  SignUp(String identifier, String password, String email, String firstName, String lastName) {
 //    ApiProvider apiPovider = ApiProvider();
@@ -31,6 +34,8 @@ class _PetRegisterState extends State<RegisterRoute> {
   String email = "";
   String password = "";
   //String _token = "";
+
+  _PetRegisterState(this.userType);
 
 
   //RegisterRoute(this.userType);
@@ -159,13 +164,13 @@ class _PetRegisterState extends State<RegisterRoute> {
                         },
                         );
 
-//                        Navigator.push(
-//                          context,
-//                          MaterialPageRoute(
-//                              builder: (context) =>
-//                                  userType == "owner" ? CreatorRoute() : SitterMainRoute()
-//                        ),
-//                        );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  userType == "owner" ? CreatorRoute() : SitterMainRoute()
+                        ),
+                        );
                       },
                     ),
                     width: 270,

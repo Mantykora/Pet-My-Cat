@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pet_my_cat/login_route.dart';
 import 'package:pet_my_cat/register_route.dart';
+import 'package:pet_my_cat/utils/pet_enum.dart';
 
 void main() => runApp(MyApp());
 
@@ -63,12 +64,12 @@ class MyHomePage extends StatelessWidget {
                             ),
                           ),
                           onTap: () {
-                            userType = "owner";
+                            userType = "${PersMap[Person.owner]}";
                             Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                      RegisterRoute()),
+                                      RegisterRoute(userType: userType,)),
                             );
                           },
                         ),
@@ -106,7 +107,7 @@ class MyHomePage extends StatelessWidget {
                             ),
                           ),
                           onTap: () {
-                            userType = "sitter";
+                            userType = "${PersMap[Person.sitter]}";
 
                             Navigator.push(
                               context,
