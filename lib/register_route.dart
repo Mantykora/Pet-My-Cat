@@ -48,6 +48,20 @@ class _PetRegisterState extends State<RegisterRoute> {
     }
   }
 
+  Future<Token> register() async {
+    final response = await ApiProvider().postRegister(SignUp(identifier: firstName, password: password, firstName: firstName, lastName: "b", email: email));
+    if (response != null) {
+      SharedPref().writeToSharedPrefs(response.token, firstName, password, userType);
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) =>
+            userType == "owner" ? CreatorRoute() : SitterMainRoute()
+        ),
+      );
+    }
+  }
+
 //  void writeToSharedPrefs(String token, String login, String password) async {
 //    final prefs = await SharedPreferences.getInstance();
 //    prefs.setString('token', token);
@@ -155,22 +169,17 @@ class _PetRegisterState extends State<RegisterRoute> {
                         ),
                       ),
                       onPressed: () {
-                        FutureBuilder<Token>(
-                          future: ApiProvider().postRegister(SignUp(identifier: firstName, password: password, firstName: firstName, lastName: "b", email: email)),
-                          builder: (context, response) {
-                            //TODO change firstname to email
-                             SharedPref().writeToSharedPrefs(response.data.token, firstName, password);
+//                        FutureBuilder<Token>(
+//                          future: ApiProvider().postRegister(SignUp(identifier: firstName, password: password, firstName: firstName, lastName: "b", email: email)),
+//                          builder: (context, response) {
+//
+//                            //TODO change firstname to email
+//                             navigateToOwnerOrSitterRoute(response, context);
+//                        },
+//                        );
+                      register();
 
-                        },
-                        );
 
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  userType == "owner" ? CreatorRoute() : SitterMainRoute()
-                        ),
-                        );
                       },
                     ),
                     width: 270,
@@ -181,6 +190,17 @@ class _PetRegisterState extends State<RegisterRoute> {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  void navigateToOwnerOrSitterRoute(AsyncSnapshot<Token> response, BuildContext context) {
+        SharedPref().writeToSharedPrefs(response.data.token, firstName, password, userType);
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+          builder: (context) =>
+          userType == "owner" ? CreatorRoute() : SitterMainRoute()
       ),
     );
   }

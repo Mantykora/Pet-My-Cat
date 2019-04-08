@@ -97,7 +97,8 @@ class _PetLoginState extends State<LoginRoute> {
                         FutureBuilder<Token>(
                           future: ApiProvider().postLogin(SignIn(identifier: email, password: password)),
                           builder: (context, response) {
-                            SharedPref().writeToSharedPrefs(response.data.token, email, password);
+                            //TODO change "owner" to response userType from server
+                            SharedPref().writeToSharedPrefs(response.data.token, email, password, "owner");
 
                           },
                         );

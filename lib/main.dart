@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:pet_my_cat/first_screen_register_route.dart';
 import 'package:pet_my_cat/login_route.dart';
+import 'package:pet_my_cat/owner_main_route.dart';
 import 'package:pet_my_cat/register_route.dart';
+import 'package:pet_my_cat/sitter_main_route.dart';
 import 'package:pet_my_cat/utils/pet_enum.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() => runApp(MyApp());
 
@@ -31,142 +35,65 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  String userType;
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: const Color(0xffdadada),
-        appBar: AppBar(
-          title: Text('Register to Pet My Cat'),
-        ),
-        body: Stack(
-          children: <Widget>[
-            Positioned(
-              top: 0.0,
-              child: Padding(
-                padding: EdgeInsets.only(left: 16, top: 16),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    ClipOval(
-                      child: Material(
-                        child: InkWell(
-                          child: Container(
-                            color: Colors.white,
-                            width: 170,
-                            height: 170,
-                            child: Padding(
-                              padding: const EdgeInsets.all(24.0),
-                              child: SvgPicture.asset('assets/volunteer.svg'),
-                            ),
-                          ),
-                          onTap: () {
-                            userType = "${PersMap[Person.owner]}";
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      RegisterRoute(userType: userType,)),
-                            );
-                          },
-                        ),
-                        type: MaterialType.transparency,
-                      ),
-                    ),
-                    Container(
-                      child: Text(
-                        'Pet owner',
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Positioned(
-              right: 0.0,
-              top: 200,
-              child: Padding(
-                padding: EdgeInsets.only(right: 16),
-                child: Column(
-                  children: <Widget>[
-                    ClipOval(
-                      child: Material(
-                        child: InkWell(
-                          child: Container(
-                            color: Colors.white,
-                            width: 170,
-                            height: 170,
-                            child: Padding(
-                              padding: const EdgeInsets.all(24.0),
-                              child: SvgPicture.asset('assets/sitter.svg'),
-                            ),
-                          ),
-                          onTap: () {
-                            userType = "${PersMap[Person.sitter]}";
+  State<StatefulWidget> createState() {
 
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      RegisterRoute()),
-                            );
-                          },
-                        ),
-                        type: MaterialType.transparency,
-                      ),
-                    ),
-                    Text(
-                      'Pet sitter',
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                    )
-                  ],
-                ),
-              ),
-            ),
-            Positioned(
-              bottom: 0.0,
-              child: Padding(
-                padding: EdgeInsets.all(16),
-                child: Column(
-                  children: <Widget>[
-                    ClipOval(
-                        child: Material(
-                      child: InkWell(
-                        child: Container(
-                          color: Colors.white,
-                          width: 105,
-                          height: 105,
-                          child: Padding(
-                            padding: const EdgeInsets.all(24.0),
-                            child: SvgPicture.asset('assets/key.svg'),
-                          ),
-                        ),
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => LoginRoute()),
-                          );
-                        },
-                      ),
-                      type: MaterialType.transparency,
-                    )),
-                    Text(
-                      'Log in',
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                    )
-                  ],
-                ),
-              ),
-            )
-          ],
-        ));
-  }
+   return _HomePageState(); }
+
+
 }
+  class _HomePageState extends State<MyHomePage> {
+
+    String _login;
+    String _user;
+
+
+    @override
+    void initState() {
+      super.initState();
+
+      _loadUserInfoAndNavigate();
+    }
+
+    @override
+    Widget build(BuildContext context) {
+      return Scaffold(
+
+      );
+    }
+
+
+    _loadUserInfoAndNavigate() async {
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      _login = (prefs.getString('login') ?? "");
+      _user = (prefs.getString('user'));
+
+
+      if (_login == "") {
+        Navigator.pushAndRemoveUntil(context,
+            MaterialPageRoute(
+                builder: (context) => FirstScreenRegisterRoute()),
+            ModalRoute.withName('/first_screen_register_route')
+        );
+      } else {
+        if (_user == "owner") {
+          Navigator.pushAndRemoveUntil(context,
+              MaterialPageRoute(
+                  builder: (context) => OwnerMainRoute()),
+              ModalRoute.withName('/owner_main_route')
+          );
+        }
+
+        else if (_user == "sitter") {
+          Navigator.pushAndRemoveUntil(context,
+              MaterialPageRoute(
+                  builder: (context) => SitterMainRoute()),
+              ModalRoute.withName('/sitter_main_route')
+          );
+        }
+      }
+    }
+  }
